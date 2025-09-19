@@ -1,39 +1,50 @@
 @import "tailwindcss";
 
+/* Default theme */
 :root {
-  --font-family: var(--font-family);
-  --font-second: var(--font-second);
-  --font-third: var(--font-third);
+  --background: #ffffff;
+  --foreground: #000000;
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-family: "Inter", sans-serif;
+  --font-second: "Roboto", sans-serif;
+  --font-third: "Poppins", sans-serif;
+
+  --font-geist-sans: "GeistSans", sans-serif;
+  --font-geist-mono: "GeistMono", monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  /* --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono); */
-
-  --font-family: var(--font-family);
-  --font-second: var(--font-second);
-  --font-third: var(--font-third);
-  
-}
-
+/* Dark mode overrides */
 @media (prefers-color-scheme: dark) {
- 
   :root {
     --background: #efeff2;
     --foreground: #303030;
   }
 }
 
+/* Tailwind v4 theming */
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-family);
+  --font-second: var(--font-second);
+  --font-third: var(--font-third);
+  --font-mono: var(--font-geist-mono);
+
+  --breakpoint-3xl: 1900px;
+}
+
+ html {
+   @apply h-full w-full;
+   -webkit-overflow-scrolling: touch;
+   /* iOS fix */
+ }
+
+/* Usage */
 body {
-    /* font-family: var(--font-family), sans-serif; */
-  @apply text-[var(--foreground)] font-family bg-[var(--background)] w-screen max-w-[1920px] mx-auto;
+  @apply flex justify-center text-foreground bg-background font-sans;
 }
 
 .section {
-  @apply w-full px-5 md:px-8 lg:px-[84px] max-w-[1920px] mx-auto;
+  @apply w-full px-5 md:px-8 lg:px-[84px] 2xl:px-[275px] max-w-[1920px];
 }

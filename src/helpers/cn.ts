@@ -1,9 +1,10 @@
-import clsx from "clsx";
+import classNames from "classnames";
+
 
 type ClassNameMap = { [key: string]: boolean | undefined | null };
 
 export const cn = (
   ...classes: (string | ClassNameMap | undefined | null)[]
 ) => {
-  return clsx(...classes);
+  return classNames(...classes);
 };

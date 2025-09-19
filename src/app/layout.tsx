@@ -3,11 +3,12 @@ import { Archivo } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "../components/Header";
+import Image from "next/image";
 
 const archivo = Archivo({
   display: "swap",
   subsets: ["latin"],
-  weight: ["400", "700", "900"],
+  weight: ["400","600", "700", "900"],
   variable: "--font-family",
 });
 
@@ -21,6 +22,11 @@ const gilroy = localFont({
     {
       path: "../../public/fonts/Gilroy-SemiBold.ttf",
       weight: "600",
+      style: "normal",
+    },
+  {
+      path: "../../public/fonts/Gilroy-Regular.ttf",
+      weight: "400",
       style: "normal",
     },
   ],
@@ -58,14 +64,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${archivo.className} ${gilroy.variable} ${konnect.variable} antialiased`}
+        className={`${archivo.className} ${gilroy.variable} ${konnect.variable} relative antialiased`}
       >
         <Header />
-        <div className="relative z-10 flex flex-col flex-grow items-start w-full pt-32">
-          {children}
-        </div>
+        <div className="relative z-10 pt-32">{children}</div>
         {/* BG Image */}
-        <div className="absolute -top-10 w-[1278px] h-[302px] xl:w-[1720px] xl:h-[402px]  left-1/2 transform -translate-x-1/2  bg-[url('/images/bg-grid_img.webp')] bg-[length:100%_118.961%] bg-[position:0_-70.597px] bg-no-repeat mix-blend-color-dodge"></div>
+        <Image src="/images/bg-grid_img.webp" alt="" width={1720} height={402} className="absolute -top-10 w-full h-auto left-1/2 transform -translate-x-1/2  mix-blend-color-dodge" />
       </body>
     </html>
   );
