@@ -44,7 +44,7 @@ export const Hero: React.FC = () => {
             classNames=" w-full md:w-[208px]"
           >
             {" "}
-            <IconArrow className=" w-4 h-auto absolute z-10 right-8 " />
+            <IconArrow className="md:hidden w-4 h-auto absolute z-10 right-8 " />
           </Button>
         </div>
       </div>

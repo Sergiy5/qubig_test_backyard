@@ -21,8 +21,7 @@ const pathname = usePathname();
         {navLinksArray.map((item) => {
           const isActive =
             pathname.replace(/\/$/, "") === item.link.replace(/\/$/, "");
-          console.log("pathname", pathname);
-          console.log("item.link", item.link);
+         
           return (
             <NavBarItem
               key={item.link}
