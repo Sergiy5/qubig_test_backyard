@@ -4,14 +4,14 @@ interface ButtonProps {
   label: string;
   style?: "primary" | "secondary";
   isNoise?: boolean;
-  // width?: string;
+  children?: React.ReactNode;
   classNames?: string;
 }
 export const Button: React.FC<ButtonProps> = ({
   label = "Join Whitelist",
   style = "primary",
   isNoise = true,
-  // width = 'w-full'
+  children,
   classNames
 }) => {
   return (
@@ -24,6 +24,7 @@ export const Button: React.FC<ButtonProps> = ({
             style === "primary",
           "bg-[#E6E8EC] hover:bg-[#F8FBFF] active:bg-[#ABACAF]":
             style === "secondary",
+        
         },
         classNames
       )}
@@ -54,6 +55,7 @@ export const Button: React.FC<ButtonProps> = ({
           )}
         />
       )}
+      {children }
     </button>
   );
 };

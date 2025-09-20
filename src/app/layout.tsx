@@ -4,11 +4,12 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "../components/Header";
 import Image from "next/image";
+import IconEllipsBg from "@/assets/icons/ellips-top-bg.svg";
 
 const archivo = Archivo({
   display: "swap",
   subsets: ["latin"],
-  weight: ["400","600", "700", "900"],
+  weight: ["400","600", "700", "800", "900"],
   variable: "--font-family",
 });
 
@@ -16,7 +17,7 @@ const gilroy = localFont({
   src: [
     {
       path: "../../public/fonts/Gilroy-Medium.ttf",
-      weight: "700",
+      weight: "500",
       style: "normal",
     },
     {
@@ -59,7 +60,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // 2xl:aspect-[552px]  xl:aspect-[1278.01/482] 2xl:aspect-[1278.01/482] lg:h-[372px]
 
   return (
     <html lang="en">
@@ -67,9 +67,21 @@ export default function RootLayout({
         className={`${archivo.className} ${gilroy.variable} ${konnect.variable} relative antialiased`}
       >
         <Header />
-        <div className="relative z-10 pt-32">{children}</div>
+        <div className="relative z-10 pt-32 3xl:pt-52 overflow-x-hidden">
+          {children}
+          {/* <div className="md:hidden absolute top-0 -z-20 left-0 w-full h-[60%] bg-[url('/images/mobile_bg.webp')] bg-no-repeat bg-cover bg-center mix-blend-color-dodge"></div> */}
+        </div>
         {/* BG Image */}
-        <Image src="/images/bg-grid_img.webp" alt="" width={1720} height={402} className="absolute -top-10 w-full h-auto left-1/2 transform -translate-x-1/2  mix-blend-color-dodge" />
+        <div className=" absolute -top-12 3xl:top-0 w-full 3xl:!w-[calc(100%-20px)] h-[372px] max-w-[1880px] left-1/2 transform -translate-x-1/2 mix-blend-color-dodge">
+          <Image
+            src="/images/bg-grid_img.webp"
+            alt=""
+            width={1278}
+            height={372}
+            className="w-full h-auto"
+          />
+          <IconEllipsBg className="absolute top-[219px] 2xl:top-[186px] w-full md:w-[645px] h-[376px] blur-[125px] left-1/2 transform -translate-x-1/2" />
+        </div>
       </body>
     </html>
   );

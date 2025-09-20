@@ -16,7 +16,7 @@ export const NavBarItem: React.FC<NavBarItemProps> = ({
     <Link
       href={link}
       className={cn(
-        "flex justify-center items-center p-[11px] rounded-full text-[#AEB0B1]",
+        "flex justify-center items-center px-3 py-[11px] rounded-full text-[#AEB0B1]",
         {
           "bg-[#383838] text-[#FBFBFC]": isActive,
         }

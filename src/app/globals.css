@@ -5,9 +5,9 @@
   --background: #ffffff;
   --foreground: #000000;
 
-  --font-family: "Inter", sans-serif;
+  /* --font-family: "Inter", sans-serif;
   --font-second: "Roboto", sans-serif;
-  --font-third: "Poppins", sans-serif;
+  --font-third: "Poppins", sans-serif; */
 
   --font-geist-sans: "GeistSans", sans-serif;
   --font-geist-mono: "GeistMono", monospace;
@@ -31,7 +31,7 @@
   --font-third: var(--font-third);
   --font-mono: var(--font-geist-mono);
 
-  --breakpoint-3xl: 1900px;
+  --breakpoint-3xl: 1820px;
 }
 
  html {
@@ -46,5 +46,9 @@ body {
 }
 
 .section {
-  @apply w-full px-5 md:px-8 lg:px-[84px] 2xl:px-[275px] max-w-[1920px];
+  @apply w-full px-5 md:px-8 lg:px-[84px] 3xl:!px-[275px] max-w-[1920px];
+}
+
+.featuresSwiper .swiper-pagination {
+  @apply  !bottom-0 !left-5 md:!left-1/2 !h-6 !w-auto;
 }

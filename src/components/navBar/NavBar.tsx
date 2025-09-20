@@ -16,8 +16,8 @@ export const NavBar: React.FC = () => {
 const pathname = usePathname();
 
   return (
-    <nav className="hidden md:flex mx-auto">
-      <ul className="flex items-center h-11 gap-[7px] p-[3px] rounded-full bg-[#E6E9EC52] border border-[#E1E1E275]">
+    <nav className="hidden md:flex h-11 p-[1px] mx-auto rounded-full bg-[#E1E1E2]/46">
+      <ul className="flex items-center h-full gap-[7px] p-[3px] rounded-full bg-[#F3F4F6]">
         {navLinksArray.map((item) => {
           const isActive = pathname === item.link;
 
