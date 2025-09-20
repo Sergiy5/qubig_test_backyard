@@ -19,8 +19,10 @@ const pathname = usePathname();
     <nav className="hidden md:flex h-11 p-[1px] mx-auto rounded-full bg-[#E1E1E2]/46">
       <ul className="flex items-center h-full gap-[7px] p-[3px] rounded-full bg-[#F3F4F6]">
         {navLinksArray.map((item) => {
-          const isActive = pathname === item.link;
-
+          const isActive =
+            pathname.replace(/\/$/, "") === item.link.replace(/\/$/, "");
+          console.log("pathname", pathname);
+          console.log("item.link", item.link);
           return (
             <NavBarItem
               key={item.link}

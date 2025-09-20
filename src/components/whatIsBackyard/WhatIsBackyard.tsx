@@ -3,7 +3,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import IconEllipsBg from "@/assets/icons/ellips-top-bg.svg";
+// import IconEllipsBg from "@/assets/icons/ellips-top-bg.svg";
 
 
 // Import Swiper styles

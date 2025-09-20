@@ -23,13 +23,6 @@ export const Header: React.FC = () => {
           <NavBar />
           <BurgerMenuButton />
 
-          {/* <button
-            className={
-              "flex items-center justify-center md:hidden w-[75px] h-[31px] text-[11px] text-[#FBFBFC] bg-[#303030] rounded-full cursor-pointer hover:bg-[#3B3B3B]/80 hover:text-[#D1D1D2] active:bg-[#2D2D2D] transition-all duration-200 easy-in-out"
-            }
-          >
-            Connect
-          </button> */}
         </div>
       </div>
     );
