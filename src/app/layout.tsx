@@ -69,18 +69,28 @@ export default function RootLayout({
         <Header />
         <div className="relative z-10 pt-32 3xl:pt-52 overflow-x-hidden">
           {children}
-          {/* <div className="md:hidden absolute top-0 -z-20 left-0 w-full h-[60%] bg-[url('/images/mobile_bg.webp')] bg-no-repeat bg-cover bg-center mix-blend-color-dodge"></div> */}
         </div>
         {/* BG Image */}
-        <div className=" absolute -top-12 3xl:top-0 w-full 3xl:!w-[calc(100%-20px)] h-[372px] max-w-[1880px] left-1/2 transform -translate-x-1/2 mix-blend-color-dodge">
-          <Image
-            src="/images/bg-grid_img.webp"
-            alt=""
-            width={1278}
-            height={372}
-            className="w-full h-auto"
-          />
-          <IconEllipsBg className="absolute top-[219px] 2xl:top-[186px] w-full md:w-[645px] h-[376px] blur-[125px] left-1/2 transform -translate-x-1/2" />
+
+        <div className="absolute inset-0  overflow-hidden">
+          <div className=" absolute top-0 sm:-top-12 3xl:top-0 w-[1038px] sm:w-full 3xl:!w-[calc(100%-20px)] sm:h-[372px] max-w-[1880px] left-1/2 transform -translate-x-1/2 mix-blend-color-dodge">
+            <Image
+              src="/images/bg-grid_img.webp"
+              alt=""
+              width={1278}
+              height={372}
+              className="w-full h-auto"
+            />
+            <Image
+              src="/images/bg-grid_img.webp"
+              alt=""
+              width={1278}
+              height={372}
+              className="sm:hidden w-full h-auto rotate-180"
+            />
+
+            <IconEllipsBg className="hidden sm:block absolute blur-[125px] sm:blur-[125px] sm:top-[219px] 2xl:top-[186px] w-[425px] sm:w-[645px] h-[376px] left-1/2 transform -translate-x-1/2" />
+          </div>
         </div>
       </body>
     </html>

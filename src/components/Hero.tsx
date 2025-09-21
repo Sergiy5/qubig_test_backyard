@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Button } from "./ui/Button";
 import IconEllips from '@/assets/icons/icon-ellipse.svg'
 import IconArrow from "@/assets/icons/arrow.svg";
+import IconEllipsBg from "@/assets/icons/ellips-top-bg.svg";
+
 
 export const Hero: React.FC = () => {
 
@@ -27,8 +29,9 @@ export const Hero: React.FC = () => {
               liquidity
             </span>
           </h1>
-          <p className="text-xl 2xl:text-2xl font-normal leading-[130%] 3xl:!leading-[130%] text-left text-neutral-800/[0.55]">
+          <p className="relative text-xl 2xl:text-2xl font-normal leading-[130%] 3xl:!leading-[130%] text-left text-neutral-800/[0.55]">
             Keep your yield working for you — we keep your liquidity accessible
+            <IconEllipsBg className="sm:hidden blur-[55px] absolute -z-10 left-0 -bottom-64 w-[425px] h-[376px] top-1/2 transform -translate-y-1/2 " />
           </p>
         </div>
 
@@ -41,10 +44,10 @@ export const Hero: React.FC = () => {
           <Button
             label="Read Docs"
             style="secondary"
-            classNames=" w-full md:w-[208px]"
+            classNames=" w-full gap-2 sm:gap-0 md:w-[208px]"
           >
             {" "}
-            <IconArrow className="md:hidden w-4 h-auto absolute z-10 right-8 " />
+            <IconArrow className="sm:hidden w-4 h-auto  relative" />
           </Button>
         </div>
       </div>
